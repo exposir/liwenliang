@@ -77,7 +77,7 @@ async function init() {
             console.log(`时间 ${dayjs().format('YYYY-MM-DD A hh:mm dddd')}`)
             console.log(`次数 ${a++}`)
 
-        }, 10000);
+        }, 20000);
     } catch (e) {
         console.log('e', e)
     }
