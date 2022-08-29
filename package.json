@@ -1,0 +1,21 @@
+{
+  "name": "liwenliang",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc && node lib/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ddev": "vitepress dev docs",
+    "dbuild": "vitepress build docs",
+    "dserve": "vitepress serve docs",
+    "tsc": "tsc"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^18.7.13",
+    "dayjs": "^1.11.5",
+    "lodash": "^4.17.21",
+    "node-fetch": "2.6.1",
+    "typescript": "^4.8.2"
+  }
+}
