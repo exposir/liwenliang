@@ -2,6 +2,7 @@ import fetch from "node-fetch"
 import { readFile, writeFile } from "fs";
 import { uniqBy } from 'lodash'
 import dayjs from 'dayjs'
+import git from "simple-git";
 import 'dayjs/locale/zh-cn'
 dayjs.locale('zh-cn')
 
@@ -70,12 +71,25 @@ async function init() {
         });
     }
 
+    const submit = async () => {
+        try {
+            const simpleGit = git();
+            await simpleGit.add("./*");
+            await simpleGit.commit("update");
+            await simpleGit.push("origin", "main");
+            console.log("submit ok");
+        } catch (e) {
+            console.log(e);
+        }
+    };
+
     try {
         setInterval(async () => {
-
             action()
+            submit()
             console.log(`时间 ${dayjs().format('YYYY-MM-DD A hh:mm dddd')}`)
             console.log(`次数 ${a++}`)
+
 
         }, 20000);
     } catch (e) {
