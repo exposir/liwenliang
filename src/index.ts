@@ -54,7 +54,9 @@ async function init() {
         })
 
 
-        readFile(`${cwd}/lib/comment.json`, function (err, data) {
+        readFile(`${cwd}/comment.json`, function (err, data) {
+            console.log(`${cwd}/comment.json`)
+            console.log(data)
 
             const beforeString = data.toString();
             const beforeData = JSON.parse(beforeString)
@@ -62,7 +64,7 @@ async function init() {
 
             console.log(`数据 ${newComment.length}`)
 
-            writeFile(`${cwd}/lib/comment.json`, JSON.stringify(newComment), function (err) {
+            writeFile(`${cwd}/comment.json`, JSON.stringify(newComment), function (err) {
                 if (err) {
                     return console.error(err);
                 }
