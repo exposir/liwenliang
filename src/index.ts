@@ -96,7 +96,7 @@ async function init() {
 
         setInterval(async () => {
             submit()
-        }, 1000000);
+        }, 4000000);
 
     } catch (e) {
         console.log('e', e)
