@@ -62,11 +62,15 @@ async function init() {
 
             console.log(`数据 ${newComment.length}`)
 
-            writeFile(`${cwd}/lib/comment.json`, JSON.stringify(newComment), function (err) {
-                if (err) {
-                    return console.error(err);
-                }
-            });
+            if (newComment && newComment.length) {
+                writeFile(`${cwd}/lib/comment.json`, JSON.stringify(newComment), function (err) {
+                    if (err) {
+                        return console.error(err);
+                    }
+                });
+            }
+
+
 
         });
     }
