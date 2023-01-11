@@ -89,14 +89,13 @@ async function init() {
 
     try {
         setInterval(async () => {
-            action()
+            await action()
             console.log(`时间 ${dayjs().format('YYYY-MM-DD A hh:mm dddd')}`)
             console.log(`次数 ${a++}`)
+            if (a % 300 === 0) {
+                submit()
+            }
         }, 20000);
-
-        setInterval(async () => {
-            submit()
-        }, 1000000);
 
     } catch (e) {
         console.log('e', e)
