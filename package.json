@@ -6,14 +6,17 @@
     "start": "tsc && node lib/index.js",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "prettier": "prettier --write ."
   },
   "license": "MIT",
   "dependencies": {
     "@types/node": "^18.7.13",
+    "JSONStream": "^1.3.5",
     "dayjs": "^1.11.5",
     "lodash": "^4.17.21",
     "node-fetch": "2.6.1",
+    "readline": "^1.3.0",
     "simple-git": "^3.14.1",
     "typescript": "^4.8.2"
   },
